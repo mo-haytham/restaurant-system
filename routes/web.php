@@ -12,9 +12,9 @@ Route::middleware('guest:admin')->group(function () {
 
 Route::middleware('auth:admin')->group(function () {
     Route::prefix('account')->group(function () {
-        Route::get('/', 'AuthController@account')->name('dashboard.get.account');
-        Route::post('/password', 'AuthController@update_password')->name('dashboard.update.password');
-        Route::get('/logout', 'AuthController@logout')->name('dashboard.logout');
+        Route::get('/', 'AuthController@account')->name('website.get.account');
+        Route::post('/password', 'AuthController@update_password')->name('website.update.password');
+        Route::get('/logout', 'AuthController@logout')->name('website.logout');
     });
 });
 
