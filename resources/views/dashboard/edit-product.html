@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+        Roaf Admin panel
+        </title>
+        <!-- add icon link -->
+        <link rel = "icon" href = "img/B-LOGO.png" type = "image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="css/main.css">
+        
+    </head>
+
+    <body> 
+    
+<!--Start dash-table' section-->
+
+    <section class="dash-table">
+            
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="">
+                <a href="orders.html"><i class="fas fa-shopping-cart"></i> Order Management</a>
+                    
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-cog"></i> Food Management</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="add-product.html"><i class="fas fa-plus"></i> Add New One</a>
+                        </li>
+                        <li>
+                            <a href="edit-product.html" ><i class="far fa-edit"></i> Edit Existing One</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="acc-manage.html"><i class="fas fa-user-circle"></i> Account Management</a>
+                </li>
+                <li class="mt-4">
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> sign Out</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg  ">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <div class="logo">
+                        <img src="img/B-LOGO.png" >
+                    </div>
+                    
+                </div>
+            </nav>
+            
+            <!--End edit food section-->
+
+
+            <div class="row justify-content-center text-center pt">
+            <div class="col-md-10 col-lg-8">
+                <div class="header-section d-flex justify-content-center">
+                    
+                    <h2 class="title" >Food Management</h2>
+            
+                </div>
+            </div>
+        </div>        
+                
+        <div class="row justify-content-between align-content-center pb-2">
+            <div class="col-lg-2 col-md-2 col-3 ">
+                <a href="add-product.html" class="btn ad-btn" role="button">
+                    Add New
+                </a>
+            </div>
+                <div class="col-lg-6 col-md-6 d-flex justify-content-end">
+
+                    <div class="form-group has-search ">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control" placeholder="Search Product">
+                    </div>
+                </div>
+                
+        
+        </div>
+
+        </div>
+        
+    </section>
+  
+
+      
+
+<!--End edit food section-->
+
+
+        <script src="https://kit.fontawesome.com/b576baa534.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        
+        <script src="js/dash.js"></script>
+    </body>
+
+
+</html>
