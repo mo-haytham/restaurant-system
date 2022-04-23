@@ -37,9 +37,11 @@ a {
   z-index: 90;
   border-radius: 10px;
 }
+
 .drop-button i {
   font-size: 28px;
 }
+
 .dropdown-toggle::after {
   display: none;
 }
@@ -89,7 +91,9 @@ a {
 
 .first-section {
   padding-top: 80px;
+  margin-bottom: 60px;
 }
+
 .item-img {
   margin-top: 50px;
 }
@@ -98,6 +102,7 @@ a {
   font-family: "Lobster Two", cursive;
   font-size: 17px;
 }
+
 .go-top {
   position: fixed;
   bottom: 10px;
@@ -113,6 +118,7 @@ a {
   z-index: 90;
   border-radius: 20px;
 }
+
 .go-top i {
   color: #ffbc3c;
 }
@@ -134,10 +140,12 @@ a {
   color: #ffbc3c;
   transform: translate(0%, 10%);
 }
+
 #menu {
   bottom: 5px;
   /*background-color: rgba(52, 48, 49, 0.8);*/
 }
+
 .side-word {
   color: #ffbc3c;
   padding: 0px 8px 0px 10px;
@@ -157,6 +165,7 @@ a {
   font-size: 18px;
   font-weight: 500;
 }
+
 .request i {
   padding: 10px;
   font-size: 27px;
@@ -172,32 +181,39 @@ a {
   clear: both;
   padding-right: 40px;
 }
+
 .modal-footer button {
   background-color: #343031;
 }
+
 .plus-minus {
   border: 1px solid #343031;
   width: 80px;
   border-radius: 10px;
 }
+
 .number {
   padding: 0px 10px 0px 10px;
   font-size: 23px;
 }
+
 .plus,
 .minus {
   font-size: 23px;
   font-weight: 500;
 }
+
 .pro-name {
   font-size: 23px;
   font-weight: 500;
 }
+
 @media screen and (max-width: 383px) {
   .plus-minus {
     width: 100px;
     height: 45px;
   }
+
   .pro-name {
     font-size: 20px;
     font-weight: 500;
@@ -209,10 +225,12 @@ a {
   font-size: 20px;
   font-weight: 500;
 }
+
 .special-addings i {
   padding: 10px;
   font-size: 27px;
 }
+
 /*.addings-text {
   margin-left: 10px;
   padding-left: 20px;
@@ -224,6 +242,7 @@ a {
   font-family: "Exo", sans-serif;
   font-size: 15px;
 }
+
 .basket-button {
   font-size: 20px;
   padding: 10px 10px 10px 10px;
@@ -248,30 +267,37 @@ a {
   transition: 0.2s all linear;
   cursor: pointer;
 }
+
 .sizes input:checked {
   border: 6px solid #343031;
 }
+
 .sizes h2 {
   margin-left: 15px;
 }
+
 .sizes label {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
 }
+
 .sizes span {
   margin-top: 3px;
   font-weight: 700;
   font-family: "Exo", sans-serif;
 }
+
 .special-addings-2 label {
   font-size: 20px;
   font-weight: 500;
 }
+
 .special-addings-2 i {
   padding: 10px;
   font-size: 26px;
 }
+
 /*.addings-text-2 {
   margin-left: 10px;
   padding-left: 20px;

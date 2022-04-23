@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function get_login()
     {
-        return view('dashboard.login');
+        return view('website.login');
     }
 
     public function login(Request $request)
@@ -24,14 +24,14 @@ class AuthController extends Controller
         $remember_me = $request->remember_me == 'on' ? true : false;
 
         try {
-            $admin = Admin::where('email', $request->email)->first();
+            $admin = User::where('email', $request->email)->first();
             if ($admin) {
                 if ($admin->status == 1) {
-                    if (Auth::guard('admin')->attempt([
+                    if (Auth::guard('web')->attempt([
                         'email' => $request->email,
                         'password' => $request->password,
                     ], $remember_me)) {
-                        return redirect()->route('dashboard');
+                        return redirect()->route('website.index');
                     } else {
                         $msg = ['custom_error' => 'Password is incorrect, check your password and try again.'];
                         return redirect()->back()->with($msg)->withInput();
@@ -62,7 +62,7 @@ class AuthController extends Controller
 
     public function logout()
     {
-        auth('admin')->logout();
-        return redirect()->route('dashboard.get.login');
+        auth('web')->logout();
+        return redirect()->route('website.get.login');
     }
 }
