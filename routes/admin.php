@@ -22,6 +22,8 @@ Route::middleware('auth:admin')->group(function () {
     Route::prefix('orders')->group(function () {
         Route::get('/', 'OrderController@index')->name('dashboard.orders');
         Route::get('/view/{order_id}', 'OrderController@view')->name('dashboard.order.view');
+        Route::post('/confirm', 'OrderController@confirm')->name('dashboard.confirm.order');
+        Route::post('/delete', 'OrderController@delete')->name('dashboard.delete.order');
     });
 
     Route::prefix('management')->group(function () {

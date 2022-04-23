@@ -17,3 +17,5 @@ Route::middleware('auth:admin')->group(function () {
         Route::get('/logout', 'AuthController@logout')->name('dashboard.logout');
     });
 });
+
+Route::post('/order', 'OrderController@order')->name('website.order');

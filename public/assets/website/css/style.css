@@ -95,7 +95,8 @@ a {
 }
 
 .item-img {
-  margin-top: 50px;
+  margin: 10px;
+  height: 75px;
 }
 
 .text-muted {

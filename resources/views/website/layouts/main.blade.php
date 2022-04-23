@@ -106,100 +106,7 @@
                 </div>
             </div>
         </div>
-        <a class="go-top" href="#"><i class="fas fa-arrow-up"></i></a>
-
-        {{-- fire cart modal --}}
-        <button type="button" class="btn btn-light go-to-cart" id="menu" data-bs-toggle="modal"
-            data-bs-target="#cart_modal">
-            <a href="#">
-                <span class="side-word">Total Sum</span>
-                <i class="fas fa-cart-plus"></i>
-            </a>
-        </button>
-
-        {{-- cart modal --}}
-        <div class="modal fade" id="cart_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="cart_modal_label" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="cart_modal_label">Make Order</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="card mb-3" style="max-width: 540px">
-                            <div class="row g-0">
-                                <div class="col-md-8 col-6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">
-                                            This is a wider card with supporting text below as a
-                                            natural lead-in to additional content.
-                                        </p>
-                                        <p class="card-text">
-                                            <small class="text-muted">100.00 EGP</small>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-6">
-                                    <a href="#">
-                                        <img src="{{ asset('assets/website/imgs/dish-2.png') }}"
-                                            class="img-fluid rounded-start item-img" alt="..." />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-3" style="max-width: 540px">
-                            <div class="row g-0">
-                                <div class="col-md-8 col-6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">
-                                            <small class="text-muted">(100.00 EGP)</small>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-6">
-                                    <a href="#">
-                                        <img src="{{ asset('assets/website/imgs/dish-2.png') }}"
-                                            class="img-fluid rounded-start item-img" alt="..." />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="request">
-                            <div class="container">
-                                <h3>Special Requests</h3>
-                                <a> <i class="far fa-sticky-note"></i></a>
-                                <a> <span>Add Note</span></a> <br />
-                                <input type="text" class="add-note" id="note" name="note"
-                                    placeholder="Anything we need to know" />
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="payment">
-                            <div class="container">
-                                <h3>Payment Summary</h3>
-                                <p class="pt-2">Subtotal <span>EGP 000.00</span></p>
-                                <p>Service <span>EGP 000.00</span></p>
-                                <p>Total <span>EGP 000.00</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
-                            Close
-                        </button>
-                        <button type="button" class="btn btn-dark">Confirm</button>
-                        <button type="button" class="btn btn-dark">Add More</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-
 
     @foreach ($categories as $category)
         <section id="{{ $category->name_as_id }}" class="first-section">
@@ -209,40 +116,35 @@
                 </div>
                 <div class="row pt-3">
                     @foreach ($category->items as $item)
-                        <div class="col-md-6 col-12">
-                            <div class="card mb-3" style="max-width: 540px">
-                                <div class="row g-0">
-                                    <div class="col-sm-12 col-md-8">
-                                        <div class="card-body">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-8">
                                             <h5 class="card-title">{{ $item->name }}</h5>
                                             <p class="card-text">
-                                                {{ $item->description->description }}
+                                                {{ $item->description->description ?? '' }}
                                             </p>
-                                            <p class="card-text">
-                                                <small class="text-muted item-price">{{ $item->price }} EGP</small>
-                                            </p>
+                                            <small class="text-muted item-price">{{ $item->price }} EGP</small>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4">
-                                        <div>
+                                        <div class="col-sm-12 col-md-4">
                                             <img src="{{ asset('/') . $item->image_url }}"
-                                                class="img-fluid rounded-start item-img" alt="..." type="button"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop-1" />
+                                                class="item-img add_to_cart" type="button" data-bs-toggle="modal"
+                                                data-item-collection='{!! $item !!}'
+                                                data-bs-target="#add_to_cart" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
-
-
                 </div>
             </div>
         </section>
     @endforeach
 
     {{-- add to cart modal --}}
-    <div class="modal fade" id="staticBackdrop-1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="add_to_cart" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -254,39 +156,20 @@
                 </div>
 
                 <div class="modal-body">
-                    <div class="card modal-card" style="width: 100%">
-                        <img src="{{ asset('assets/website/imgs/dish-1.png') }}" class="card-img-top" alt="..." />
-
+                    <div class="card modal-card">
+                        <div class="d-flex justify-content-center">
+                            <img id="add_to_cart_image" src="" style="width: 50% !important">
+                        </div>
                         <div class="card-body">
-                            <hr>
-                            <div class="row g-0 pt-3 pb-3">
-                                <div class="col-md-6 col-6">
-                                    <p class="card-text pro-name">
-                                        Product Name
-                                    </p>
+                            <div class="row pt-3 pb-3">
+                                <div class="col-sm-12 col-md-6">
+                                    <p class="card-text pro-name" id="add_to_cart_name"></p>
                                 </div>
-                                <div class="col-md-6 col-6 d-flex justify-content-center">
-                                    <div class="plus-minus d-flex justify-content-center">
-                                        <span class="minus" type="button">&#8722;</span>
-                                        <span class="number">1</span>
-                                        <span class="plus" type="button">&#43;
-                                        </span>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="d-flex justify-content-center">
+                                        <input type="number" id="add_to_cart_number" value="1" class="form-control">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <div class="special-addings">
-                            <div class="container">
-                                <a> <i class="far fa-sticky-note"></i></a>
-                                <a>
-                                    <label for="addings">Any Special
-                                        Addings?</label>
-                                </a>
-                                <br>
-                                <input type="text" class="add-note" id="addings" name="addings" />
                             </div>
                         </div>
                     </div>
@@ -296,14 +179,86 @@
                     <button type="button" class="btn btn-dark footer-button" data-bs-dismiss="modal">
                         Close
                     </button>
-                    <button type="button" class="btn btn-dark basket-button">
-                        Add to basket
-                        <span class="product-sum">EGP 00.00</span>
+                    <button type="button" class="btn btn-dark basket-button" id="add_to_cart_button">
+                        Add to Cart
+                        <span class="product-sum">EGP <span id="add_to_cart_price"></span></span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
+
+    <a class="go-top" href="#"><i class="fas fa-arrow-up"></i></a>
+
+    {{-- fire cart modal --}}
+    <button type="button" class="btn btn-light go-to-cart" id="menu" data-bs-toggle="modal"
+        data-bs-target="#cart_modal">
+        <span class="side-word">My Cart</span>
+        <i class="fas fa-cart-plus"></i>
+    </button>
+
+    {{-- cart modal --}}
+    <form action="{{ route('website.order') }}" method="post">
+        @csrf
+        <div class="modal fade" id="cart_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="cart_modal_label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cart_modal_label">Make Order</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="cart_container">
+                        {{-- items placed here by js --}}
+                        <hr>
+                        <div class="form-group">
+                            <label for="notes">
+                                <i class="far fa-sticky-note"></i>
+                                Special Requests
+                            </label>
+                            <textarea name="notes" id="notes" rows="3" class="form-control"></textarea>
+                        </div>
+                        <hr>
+                        <div class="payment">
+                            <div class="container">
+                                <h3>Payment Summary</h3>
+                                <p>Total <span>EGP <span id="cart_total_price">0.00</span></span></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="user_name">Your Name</label>
+                                    <input type="text" name="user_name" id="user_name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="user_mobile">You Mobile</label>
+                                    <input type="text" name="user_mobile" id="user_mobile" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="user_address">Address</label>
+                                    <textarea name="user_address" id="user_address" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="submit" class="btn btn-dark">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
 
 
     <script src="https://kit.fontawesome.com/b576baa534.js" crossorigin="anonymous"></script>
@@ -313,6 +268,68 @@
     <script src="{{ asset('assets/website/js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('assets/website/owl_carousel/dist/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/website/js/script.js') }}"></script>
+
+    <script>
+        $(".add_to_cart").click(function() {
+            let item = $(this).data("item-collection")
+            $("#add_to_cart_image").attr('src', "{{ asset('/') }}" + item.image_url)
+            $("#add_to_cart_name").text(item.name)
+            $("#add_to_cart_price").text(item.price)
+            $("#add_to_cart_button").attr('data-item', item.id)
+        })
+
+        $("#add_to_cart_button").click(function() {
+            let cart_item = $(this).attr('data-item')
+            let cart_name = $("#add_to_cart_name").text()
+            let cart_price = $("#add_to_cart_price").text()
+            let cart_number = $("#add_to_cart_number").val()
+            let cart_image = $("#add_to_cart_image").attr('src')
+
+            let total_price = (parseFloat($("#cart_total_price").text()) + (parseInt(cart_number) * parseFloat(
+                cart_price))).toFixed(2)
+            $("#cart_total_price").text(total_price)
+
+
+            let item_div = `<div class="card item_on_cart mb-3">
+                                <input type="hidden" value="${cart_item}" name="item_id[]">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${cart_name}</h5>
+                                            <div class="form-group">
+                                                <label for="cart_item_numer">
+                                                    Number
+                                                </label>
+                                                <input type="number" name="number[]" id="cart_item_numer" value="${cart_number}" class="form-control">
+                                            </div>
+                                            <div class="d-flex justify-content-between mt-2">
+                                                <small class="text-muted">${cart_price} EGP</small>
+                                                <button class="btn btn-outline-danger btn-sm remove_item">
+                                                    Remove
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <img src="${cart_image}"
+                                            class="img-fluid rounded-start item-img">
+                                    </div>
+                                </div>
+                            </div>`
+
+            $("#cart_container").prepend(item_div)
+            $("#add_to_cart").modal('toggle')
+        })
+
+        $("#cart_container").on("click", ".remove_item", function() {
+            $(this).closest(".card").remove()
+        })
+
+        // $("#menu").click(function() {
+        //     let total_price = 0
+
+        // })
+    </script>
 </body>
 
 </html>

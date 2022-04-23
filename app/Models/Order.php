@@ -11,13 +11,20 @@ class Order extends Model
 
     protected $fillable = [
         'id',
-        'user_id',
-        'address_id',
+        'user_name',
+        'user_address',
+        'user_mobile',
+        'notes',
         'admin_id',
         'status',
         'created_at',
         'updated_at'
     ];
+
+    public function getDateFormattedAttribute()
+    {
+        return date("Y-m-d", strtotime($this->created_at));
+    }
 
     public function user()
     {
