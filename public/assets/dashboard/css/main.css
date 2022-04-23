@@ -5,72 +5,77 @@ coder: Hagar
 */
 /*Login Page*/
 
-body{
+body {
 
-font-family: Ample-M;
+    font-family: Ample-M;
 
 }
 
 /*Start Sign in Section*/
-.sign-in{
+.sign-in {
     height: 100%;
     background-image: url('../img/yellow-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
-.sign-in .image{
-    padding-top: 10px ;
+
+.sign-in .image {
+    padding-top: 10px;
     padding-left: 10px;
 }
 
-.sign-in .card{
-margin: auto ;
-border: none;
-padding: 20px;
-background-color: rgb(52, 48, 49, 0.1) !important; 
+.sign-in .card {
+    margin: auto;
+    border: none;
+    padding: 20px;
+    background-color: rgb(52, 48, 49, 0.1) !important;
 }
-.sign-in .card h2{
-    color: #ffbc3c ;
+
+.sign-in .card h2 {
+    color: #ffbc3c;
     padding: 10px 0;
 }
-.sign-in input{
+
+.sign-in input {
     border-radius: 20px;
-    background-color: rgb(52, 48, 49, 0.3) ;
+    background-color: rgb(52, 48, 49, 0.3);
     margin-bottom: 20px;
     color: #fff;
 }
-.sign-in input :placeholder-shown{
+
+.sign-in input :placeholder-shown {
     color: #fff;
 }
-.sign-in input:focus{
-outline: 0 0 0 0  !important;
-box-shadow: 0 0 0 0 !important;
-border:none;
+
+.sign-in input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+    border: none;
 }
 
-.sign-in .remember{
+.sign-in .remember {
     font-size: 15px;
 }
 
-.sign-in .remember input{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
+.sign-in .remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
 }
 
-.sign-in .login_btn{
-color: #fff;
-background-color: #343031;
-width: 100px;
+.sign-in .login_btn {
+    color: #fff;
+    background-color: #343031;
+    width: 100px;
 }
 
-.sign-in .login_btn:hover{
-color: #fff;
-background-color: #ffbc3c;
+.sign-in .login_btn:hover {
+    color: #fff;
+    background-color: #ffbc3c;
 }
 
-    /*End log in section*/
+/*End log in section*/
 
 /*Start Dashbaord*/
 a,
@@ -80,39 +85,45 @@ a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
+
 .navbar {
     padding: 15px 10px;
     border: none;
     border-radius: 0;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    background-color: #fff ;
+    background-color: #fff;
     font-family: Ample-M;
 }
-.navbar img{
+
+.navbar img {
     margin: 0;
     height: 50px;
     object-fit: cover;
 }
 
-.navbar .btn-info{
-    background-color:#343031 ;
+.navbar .btn-info {
+    background-color: #343031;
     border-color: #343031
 }
+
 .line {
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
 }
-.navbar .dropdown .dropdown-toggle{
-    color:#fff;
+
+.navbar .dropdown .dropdown-toggle {
+    color: #fff;
     background-color: inherit;
 }
-.navbar .dropdown-menu{
-    background-color: #f3f1ed ;
+
+.navbar .dropdown-menu {
+    background-color: #f3f1ed;
     border: none;
 }
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -161,12 +172,14 @@ a:focus {
     font-weight: bold;
     background: #fff;
 }
-a[aria-expanded="true"]{
+
+a[aria-expanded="true"] {
     color: #fff;
     font-weight: bold;
     background: #ffbc3c;
 }
-#sidebar ul li.active>a{
+
+#sidebar ul li.active>a {
     color: #343031;
     font-weight: bold;
     background: #fff;
@@ -232,13 +245,16 @@ a.article:hover {
     #sidebar {
         margin-left: -250px;
     }
+
     #sidebar.active {
         margin-left: 0;
     }
+
     #sidebarCollapse span {
         display: none;
     }
 }
+
 /*End Dashbourd*/
 
 /*Start All sections*/
@@ -246,32 +262,29 @@ a.article:hover {
 .ad-btn {
     color: #FFF;
     background-color: #343031;
-    border-radius: 10px;
-    padding: 5px 5px;
-    font-weight: 500;
-    font-size: 19px;
-    width: 90%;
     border: none;
 }
-.ad-btn:hover{
-    background-color:#ffbc3c;
+
+.ad-btn:hover {
+    background-color: #ffbc3c;
     color: #fff;
-    font-weight: bold;
 }
 
 .dash-table .has-search .form-control {
     padding-left: 2.375rem;
-    border: #343031 2px solid ;
+    border: #343031 2px solid;
     border-radius: 10px;
     margin: 0;
     width: 120px;
     height: 40px;
     transition: ease-in-out all 0.5s;
 }
+
 .dash-table .has-search .form-control:hover {
     width: 200px;
     border-color: #ffbc3c;
 }
+
 .dash-table .has-search .form-control-feedback {
     position: absolute;
     z-index: 2;
@@ -287,88 +300,103 @@ a.article:hover {
 /*End All sections*/
 /*start Table*/
 
- .dash-table{
+.dash-table {
     background-color: #FFF;
-    position:relative;
+    position: relative;
 }
-.dash-table .title{
+
+.dash-table .title {
     color: #ffbc3c;
-    font-family:Ample-M ;
+    font-family: Ample-M;
     font-size: 45px;
     font-weight: bold;
-    padding-bottom: 80px;
 }
-.dash-table .table thead tr{
+
+.dash-table .table thead tr {
     background-color: #343031;
     color: #FFF;
     font-size: 20px;
     text-align: center;
 
 }
-.dash-table .table tbody tr{
+
+.dash-table .table tbody tr {
     border: #343031 solid;
     border-width: 2px 0;
 }
-.dash-table .table tbody tr th{
+
+.dash-table .table tbody tr th {
     color: #ffbc3c;
     font-size: 30px;
-    font-family:Ample-M ;
+    font-family: Ample-M;
 }
-.dash-table .table tbody tr td{
+
+.dash-table .table tbody tr td {
     color: #343031;
     font-size: 18px;
     font-weight: 600;
     text-align: center;
 }
-.dash-table .table tbody tr td a:hover{
+
+.dash-table .table tbody tr td a:hover {
     color: #ffbc3c;
-} 
-.dash-table .table-no{
-    font-size: 20px  ;
+}
+
+.dash-table .table-no {
+    font-size: 20px;
     padding-bottom: 20px;
 }
+
 /*End Tables*/
-    
+
 /*Start add new */
-.info{
+.info {
     padding-left: 20px;
 }
-.info label{
+
+.info label {
     display: block;
     color: #ffbc3c;
     font-size: 19px;
     font-weight: bold;
 }
-.info .form-cell{
+
+.info .form-cell {
     background-color: rgb(230, 233, 235);
     height: 40px;
     border: none;
     width: 80%;
     color: #343031;
 }
+
 input {
     color: #343031;
-    border:none
+    border: none
 }
-input:focus{
-    border:none
+
+input:focus {
+    border: none
 }
+
 /*End Add New*/
 
 
 /*Start  Admins*/
-.admins .prof-img{
+.admins .prof-img {
     width: 100px;
     height: 100px;
     margin: auto;
 }
-.admins .prof-img img{
+
+.admins .prof-img img {
     width: 100%;
     object-fit: cover;
 }
-.admins span a:hover{
+
+.admins span a:hover {
     color: #ffbc3c;
 }
+
 .admins hr {
     display: block;
     position: relative;
@@ -383,7 +411,8 @@ input:focus{
     border: none;
     border-top: 1px solid #343031;
     border-bottom: 1px solid #343031;
- }
+}
+
 /*End Admis*/
 
 /*My Fonts*/

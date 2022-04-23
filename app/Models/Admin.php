@@ -21,7 +21,6 @@ class Admin extends Authenticatable
         'updated_at'
     ];
     protected $hidden = [
-        'password',
         'remember_token',
     ];
 

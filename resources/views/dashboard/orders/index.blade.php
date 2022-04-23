@@ -22,7 +22,7 @@
         <tbody>
             <tr>
                 <td>4</td>
-                <td><a href="{{ route('dashboard.order.details') }}" target="_blank">View Details</a></td>
+                <td><a href="#" target="_blank">View Details</a></td>
                 <td></td>
                 <td></td>
                 <td></td>
